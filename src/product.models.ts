@@ -19,8 +19,8 @@ export class Product {
   sizes: string[];
   // @Prop()
   // code: string;
-  @Prop({ default: 'inStock' })
-  status: string;
+  @Prop({ default: true })
+  isInStock: boolean;
   @Prop()
   description: string;
 

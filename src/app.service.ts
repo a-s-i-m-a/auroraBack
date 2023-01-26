@@ -18,7 +18,7 @@ export class AppService {
 
   //  reading the Product collection
   async readProduct() {
-    return this.ProductModel.find({})
+    return this.ProductModel.find({ isInStock: true })
       .then((Product) => {
         return Product;
       })
