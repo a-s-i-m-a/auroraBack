@@ -1,3 +1,3 @@
 export class ProductUpdateDto {
-  status: string;
+  sizes: string[];
 }
