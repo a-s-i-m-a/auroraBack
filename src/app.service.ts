@@ -39,4 +39,25 @@ export class AppService {
   async findProduct(id) {
     return this.ProductModel.findById(id);
   }
+
+  async featureReport() {
+    const bought = await this.ProductModel.find({})
+      .then((Account) => {
+        return Account.map(
+          (el) => Number(el.boughtPrice) * el.sizes.length,
+        ).reduce((acc, rec) => acc + rec, 0);
+      })
+      .catch((err) => console.log(err));
+    const sold = await this.ProductModel.find({})
+      .then((Account) => {
+        return Account.map(
+          (el) => Number(el.soldPrice) * el.sizes.length,
+        ).reduce((acc, rec) => acc + rec, 0);
+      })
+      .catch((err) => console.log(err));
+    return {
+      bought,
+      sold,
+    };
+  }
 }

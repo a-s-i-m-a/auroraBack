@@ -11,7 +11,7 @@ import { AppService } from './app.service';
 import { Product } from './product.models';
 import { ProductUpdateDto } from './productUpdate.dto';
 
-@Controller()
+@Controller('product')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -23,6 +23,11 @@ export class AppController {
   @Get()
   readProduct() {
     return this.appService.readProduct();
+  }
+
+  @Get('/report')
+  getReport() {
+    return this.appService.featureReport();
   }
 
   @Put(':id')
