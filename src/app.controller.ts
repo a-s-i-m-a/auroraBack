@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { Product } from './product.models';
-import { ProductUpdateDto } from './productUpdate.dto';
+import { ProductEditDto, ProductUpdateDto } from './productUpdate.dto';
 
 @Controller('product')
 export class AppController {
@@ -36,6 +36,14 @@ export class AppController {
     @Body() updateData: ProductUpdateDto,
   ): Promise<Product> {
     return this.appService.updateProduct(id, updateData);
+  }
+
+  @Put('edit/:id')
+  async editProduct(
+    @Param('id') id: string,
+    @Body() updateData: ProductEditDto,
+  ): Promise<Product> {
+    return this.appService.editProduct(id, updateData);
   }
 
   @Delete(':id')
