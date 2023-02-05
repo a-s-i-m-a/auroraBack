@@ -30,6 +30,10 @@ export class AppService {
     return this.ProductModel.findByIdAndUpdate(id, data);
   }
 
+  async editProduct(id, data): Promise<Product> {
+    return this.ProductModel.findByIdAndUpdate(id, data);
+  }
+
   // deleting the data
   async deleteProduct(id) {
     return this.ProductModel.findByIdAndRemove(id);
