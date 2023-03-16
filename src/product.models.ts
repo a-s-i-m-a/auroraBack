@@ -17,6 +17,8 @@ export class Product {
   color: string;
   @Prop()
   sizes: string[];
+  @Prop({ default: null })
+  count: string;
   // @Prop()
   // code: string;
   @Prop({ default: true })
