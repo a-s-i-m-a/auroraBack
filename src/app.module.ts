@@ -6,7 +6,7 @@ import { ProductSchema } from './product.models';
 import { AccountmentController } from './accountment/accountment.controller';
 import { AccountmentModule } from './accountment/accountment.module';
 import { AccountmentService } from './accountment/accountment.service';
-import { AccountSchema } from "./accountment/account.models";
+import { AccountSchema } from './accountment/account.models';
 
 @Module({
   imports: [

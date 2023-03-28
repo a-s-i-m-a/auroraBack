@@ -13,6 +13,8 @@ export class Account {
   soldPrice: string;
   @Prop()
   discount: string;
+  @Prop()
+  count: string;
 }
 
 export const AccountSchema = SchemaFactory.createForClass(Account);
