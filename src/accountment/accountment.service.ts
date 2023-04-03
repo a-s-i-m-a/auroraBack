@@ -30,21 +30,9 @@ export class AccountmentService {
         }, 0);
       })
       .catch((err) => console.log(err));
-    const profitMoney = await this.AccountModel.find({})
-      .then((Account) => {
-        return Account.map((el) => {
-          return (
-            Number(el.soldPrice) - Number(el.boughtPrice) - Number(el.discount)
-          );
-        }).reduce((acc, rec) => {
-          return acc + rec;
-        }, 0);
-      })
-      .catch((err) => console.log(err));
     const data = {
       sold,
       bought,
-      profitMoney,
     };
     return data;
   }

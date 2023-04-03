@@ -48,14 +48,14 @@ export class AppService {
     const bought = await this.ProductModel.find({})
       .then((Account) => {
         return Account.map(
-          (el) => Number(el.boughtPrice) * el.sizes.length,
+          (el) => Number(el.boughtPrice) * Number(el.count),
         ).reduce((acc, rec) => acc + rec, 0);
       })
       .catch((err) => console.log(err));
     const sold = await this.ProductModel.find({})
       .then((Account) => {
         return Account.map(
-          (el) => Number(el.soldPrice) * el.sizes.length,
+          (el) => Number(el.soldPrice) * Number(el.count),
         ).reduce((acc, rec) => acc + rec, 0);
       })
       .catch((err) => console.log(err));
