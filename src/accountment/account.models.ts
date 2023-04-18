@@ -8,6 +8,8 @@ export class Account {
   @Prop()
   product_id: string;
   @Prop()
+  product_title: string;
+  @Prop()
   boughtPrice: string;
   @Prop()
   soldPrice: string;
