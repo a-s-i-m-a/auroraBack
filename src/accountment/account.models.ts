@@ -17,6 +17,8 @@ export class Account {
   discount: string;
   @Prop()
   count: string;
+  @Prop({ default: new Date() })
+  date: string;
 }
 
 export const AccountSchema = SchemaFactory.createForClass(Account);
