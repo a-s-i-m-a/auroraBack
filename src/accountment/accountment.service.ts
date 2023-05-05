@@ -15,6 +15,14 @@ export class AccountmentService {
     return newSell.save();
   }
 
+  async getSoldProducts() {
+    return this.AccountModel.find({})
+      .then((Account) => {
+        return Account;
+      })
+      .catch((err) => console.log(err));
+  }
+
   async report() {
     const bought = await this.AccountModel.find({})
       .then((Account) => {

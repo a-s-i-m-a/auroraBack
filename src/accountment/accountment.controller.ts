@@ -14,4 +14,9 @@ export class AccountmentController {
   async getReport() {
     return this.accountmentService.report();
   }
+
+  @Get('sold')
+  async getSoldProducts() {
+    return this.accountmentService.getSoldProducts();
+  }
 }

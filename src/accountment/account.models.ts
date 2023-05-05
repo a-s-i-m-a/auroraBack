@@ -17,7 +17,9 @@ export class Account {
   discount: string;
   @Prop()
   count: string;
-  @Prop({ default: new Date() })
+  @Prop({
+    default: `${new Date().getDate()}:${new Date().getMonth()}:${new Date().getFullYear()}`,
+  })
   date: string;
 }
 
